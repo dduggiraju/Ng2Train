@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -84,3 +85,21 @@ var childClass = (function (_super) {
 }(parentClass));
 var childObj = new childClass("Dheeraj", "Rainy", "Hyderabad");
 childObj.printMessages();
+var NameAndWeather_1 = require("./modules/NameAndWeather");
+var DuplicateName_1 = require("./modules/DuplicateName"); // demo using alias if two modules have class with same namne
+{
+    var name_1 = new NameAndWeather_1.Name("Dheeraj", "D");
+    var location_1 = new NameAndWeather_1.WeatherLocation("Cloudy", "Houston");
+    var otherName = new DuplicateName_1.Name();
+    console.log(name_1.nameMessage);
+    console.log(location_1.weatherMessage);
+    console.log(otherName.message);
+}
+//demo importing all types from a module (alternate ways to import in JS)
+var NameAndWeatherLocation = require("./modules/NameAndWeather");
+{
+    var name_2 = new NameAndWeatherLocation.Name("Dheeru", "raju");
+    var loc = new NameAndWeatherLocation.WeatherLocation("Sunny", "Hyderabad");
+    console.log(name_2.nameMessage);
+    console.log(loc.weatherMessage);
+}

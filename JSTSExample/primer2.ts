@@ -73,3 +73,22 @@ class childClass extends parentClass {
 }
 let childObj = new childClass("Dheeraj", "Rainy", "Hyderabad");
 childObj.printMessages();
+
+import { Name, WeatherLocation } from "./modules/NameAndWeather";
+import { Name as OtherName } from "./modules/DuplicateName" // demo using alias if two modules have class with same namne
+{
+    let name = new Name("Dheeraj", "D");
+    let location = new WeatherLocation("Cloudy", "Houston");
+    let otherName = new OtherName();
+    console.log(name.nameMessage);
+    console.log(location.weatherMessage);
+    console.log(otherName.message);
+}
+//demo importing all types from a module, in stead of importing individually (alternate ways to import in JS)
+import * as NameAndWeatherLocation from "./modules/NameAndWeather";
+{
+    let name = new NameAndWeatherLocation.Name("Dheeru", "raju");
+    let loc = new NameAndWeatherLocation.WeatherLocation("Sunny", "Hyderabad");
+    console.log(name.nameMessage);
+    console.log(loc.weatherMessage);
+}
