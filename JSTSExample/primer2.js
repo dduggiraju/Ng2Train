@@ -95,11 +95,18 @@ var DuplicateName_1 = require("./modules/DuplicateName"); // demo using alias if
     console.log(location_1.weatherMessage);
     console.log(otherName.message);
 }
-//demo importing all types from a module (alternate ways to import in JS)
+//demo importing all types from a module, in stead of importing individually (alternate ways to import in JS)
 var NameAndWeatherLocation = require("./modules/NameAndWeather");
 {
     var name_2 = new NameAndWeatherLocation.Name("Dheeru", "raju");
     var loc = new NameAndWeatherLocation.WeatherLocation("Sunny", "Hyderabad");
     console.log(name_2.nameMessage);
     console.log(loc.weatherMessage);
+}
+//demo types importance
+var tempConverter_1 = require("./tempConverter");
+{
+    // could pass string if no typing was defined which might bouse errors let cTemp = TempConverter.convertFtoC("38");
+    var cTemp = tempConverter_1.TempConverter.convertFtoC(38);
+    console.log("The temp is " + cTemp + "C");
 }

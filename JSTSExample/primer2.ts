@@ -92,3 +92,10 @@ import * as NameAndWeatherLocation from "./modules/NameAndWeather";
     console.log(name.nameMessage);
     console.log(loc.weatherMessage);
 }
+//demo types importance
+import { TempConverter } from "./tempConverter";
+{
+    // could pass string if no typing was defined which might bouse errors let cTemp = TempConverter.convertFtoC("38");
+    let cTemp = TempConverter.convertFtoC(38);
+    console.log(`The temp is ${cTemp}C`);
+}

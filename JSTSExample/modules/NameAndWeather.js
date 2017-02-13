@@ -1,5 +1,12 @@
 "use strict";
 var Name = (function () {
+    // first: string;
+    // second: string;
+    // constructor(first, second) {
+    //     this.first = first;
+    //     this.second = second;
+    // }
+    //short hand notation of above in type script is 
     function Name(first, second) {
         this.first = first;
         this.second = second;
