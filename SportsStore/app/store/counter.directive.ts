@@ -21,5 +21,5 @@ export class CounterDirective {
 }
 
 class CounterDirectiveContext {
-    
+    constructor(public $implicit: any) {}
 }
