@@ -11,13 +11,17 @@ const forms_1 = require("@angular/forms");
 const model_module_1 = require("../model/model.module");
 const store_component_1 = require("./store.component");
 const counter_directive_1 = require("./counter.directive");
+const cartSummary_component_1 = require("./cartSummary.component");
+const checkout_component_1 = require("./checkout.component");
+const cartDetail_component_1 = require("./cartDetail.component");
+const router_1 = require("@angular/router");
 let StoreModule = class StoreModule {
 };
 StoreModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, model_module_1.ModelModule],
-        exports: [store_component_1.StoreComponent],
-        declarations: [store_component_1.StoreComponent, counter_directive_1.CounterDirective],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, model_module_1.ModelModule, router_1.RouterModule],
+        exports: [store_component_1.StoreComponent, cartDetail_component_1.CartDetailComponent, checkout_component_1.CheckoutComponent],
+        declarations: [store_component_1.StoreComponent, counter_directive_1.CounterDirective, cartSummary_component_1.CartSummaryComponent, checkout_component_1.CheckoutComponent, cartDetail_component_1.CartDetailComponent],
         providers: [],
     })
 ], StoreModule);

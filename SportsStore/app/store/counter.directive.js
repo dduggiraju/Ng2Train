@@ -33,5 +33,8 @@ CounterDirective = __decorate([
 ], CounterDirective);
 exports.CounterDirective = CounterDirective;
 class CounterDirectiveContext {
+    constructor($implicit) {
+        this.$implicit = $implicit;
+    }
 }
 //# sourceMappingURL=counter.directive.js.map

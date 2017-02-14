@@ -6,15 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const core_1 = require("@angular/core");
-const product_repository_1 = require("./product.repository");
-const static_datasource_1 = require("./static.datasource");
-const cart_model_1 = require("./cart.model");
-let ModelModule = class ModelModule {
+let CartDetailComponent = class CartDetailComponent {
 };
-ModelModule = __decorate([
-    core_1.NgModule({
-        providers: [product_repository_1.ProductRepository, static_datasource_1.StaticDataSource, cart_model_1.Cart]
+CartDetailComponent = __decorate([
+    core_1.Component({
+        template: `<div><h3 class="bg-info p-a-1">Cart Detail Component</h3></div>`
     })
-], ModelModule);
-exports.ModelModule = ModelModule;
-//# sourceMappingURL=model.module.js.map
+], CartDetailComponent);
+exports.CartDetailComponent = CartDetailComponent;
+//# sourceMappingURL=cartDetail.component.js.map

@@ -7,19 +7,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
-const http_1 = require("@angular/http");
 const store_module_1 = require("./store/store.module");
 const app_component_1 = require("./app.component");
+const router_1 = require("@angular/router");
+const store_component_1 = require("./store/store.component");
+const checkout_component_1 = require("./store/checkout.component");
+const cartDetail_component_1 = require("./store/cartDetail.component");
 //import { AppRoutingModule } from './app.routing'; //TODO: Create app.routing
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            http_1.HttpModule,
-            store_module_1.StoreModule
-        ],
+        imports: [platform_browser_1.BrowserModule, store_module_1.StoreModule,
+            router_1.RouterModule.forRoot([
+                { path: "store", component: store_component_1.StoreComponent },
+                { path: "cart", component: cartDetail_component_1.CartDetailComponent },
+                { path: "checkout", component: checkout_component_1.CheckoutComponent },
+                { path: "**", redirectTo: "/store" }
+            ])],
         declarations: [app_component_1.AppComponent],
         providers: [],
         bootstrap: [app_component_1.AppComponent],
