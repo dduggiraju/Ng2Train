@@ -7,23 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
-const http_1 = require("@angular/http");
-const store_module_1 = require("./store/store.module");
-const app_component_1 = require("./app.component");
-//import { AppRoutingModule } from './app.routing'; //TODO: Create app.routing
-let AppModule = class AppModule {
+const forms_1 = require("@angular/forms");
+const model_module_1 = require("../model/model.module");
+const store_component_1 = require("./store.component");
+const counter_directive_1 = require("./counter.directive");
+let StoreModule = class StoreModule {
 };
-AppModule = __decorate([
+StoreModule = __decorate([
     core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            http_1.HttpModule,
-            store_module_1.StoreModule
-        ],
-        declarations: [app_component_1.AppComponent],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, model_module_1.ModelModule],
+        exports: [store_component_1.StoreComponent],
+        declarations: [store_component_1.StoreComponent, counter_directive_1.CounterDirective],
         providers: [],
-        bootstrap: [app_component_1.AppComponent],
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], StoreModule);
+exports.StoreModule = StoreModule;
+//# sourceMappingURL=store.module.js.map
