@@ -32,6 +32,10 @@ let StaticDataSource = class StaticDataSource {
     getProducts() {
         return Observable_1.Observable.from([this.products]);
     }
+    saveOrder(order) {
+        console.log(JSON.stringify(order));
+        return Observable_1.Observable.from([order]);
+    }
 };
 StaticDataSource = __decorate([
     core_1.Injectable()

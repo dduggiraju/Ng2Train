@@ -13,6 +13,7 @@ const router_1 = require("@angular/router");
 const store_component_1 = require("./store/store.component");
 const checkout_component_1 = require("./store/checkout.component");
 const cartDetail_component_1 = require("./store/cartDetail.component");
+const storeFirst_gaurd_1 = require("./storeFirst.gaurd");
 //import { AppRoutingModule } from './app.routing'; //TODO: Create app.routing
 let AppModule = class AppModule {
 };
@@ -20,13 +21,22 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, store_module_1.StoreModule,
             router_1.RouterModule.forRoot([
-                { path: "store", component: store_component_1.StoreComponent },
-                { path: "cart", component: cartDetail_component_1.CartDetailComponent },
-                { path: "checkout", component: checkout_component_1.CheckoutComponent },
+                {
+                    path: "store", component: store_component_1.StoreComponent,
+                    canActivate: [storeFirst_gaurd_1.StoreFirstGuard]
+                },
+                {
+                    path: "cart", component: cartDetail_component_1.CartDetailComponent,
+                    canActivate: [storeFirst_gaurd_1.StoreFirstGuard]
+                },
+                {
+                    path: "checkout", component: checkout_component_1.CheckoutComponent,
+                    canActivate: [storeFirst_gaurd_1.StoreFirstGuard]
+                },
                 { path: "**", redirectTo: "/store" }
             ])],
         declarations: [app_component_1.AppComponent],
-        providers: [],
+        providers: [storeFirst_gaurd_1.StoreFirstGuard],
         bootstrap: [app_component_1.AppComponent],
     })
 ], AppModule);

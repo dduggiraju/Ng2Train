@@ -9,18 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
-const cart_model_1 = require("../model/cart.model");
-let CartDetailComponent = class CartDetailComponent {
-    constructor(cart) {
-        this.cart = cart;
+const router_1 = require("@angular/router");
+const store_component_1 = require("./store/store.component");
+let StoreFirstGuard = class StoreFirstGuard {
+    constructor(router) {
+        this.router = router;
+        this.firstNavigation = true;
+    }
+    canActivate(route, state) {
+        if (this.firstNavigation) {
+            this.firstNavigation = false;
+            if (route.component != store_component_1.StoreComponent) {
+                this.router.navigateByUrl("/");
+                return false;
+            }
+        }
+        return true;
     }
 };
-CartDetailComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: `cartDetail.component.html`
-    }),
-    __metadata("design:paramtypes", [cart_model_1.Cart])
-], CartDetailComponent);
-exports.CartDetailComponent = CartDetailComponent;
-//# sourceMappingURL=cartDetail.component.js.map
+StoreFirstGuard = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [router_1.Router])
+], StoreFirstGuard);
+exports.StoreFirstGuard = StoreFirstGuard;
+//# sourceMappingURL=storeFirst.gaurd.js.map

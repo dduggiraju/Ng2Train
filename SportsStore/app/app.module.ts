@@ -7,18 +7,28 @@ import { RouterModule } from '@angular/router';
 import { StoreComponent } from "./store/store.component";
 import { CheckoutComponent } from "./store/checkout.component";
 import { CartDetailComponent } from "./store/cartDetail.component";
+import { StoreFirstGuard } from './storeFirst.gaurd';
 //import { AppRoutingModule } from './app.routing'; //TODO: Create app.routing
 
 @NgModule({
     imports: [BrowserModule, StoreModule,
         RouterModule.forRoot([
-            { path: "store", component: StoreComponent },
-            { path: "cart", component: CartDetailComponent },
-            { path: "checkout", component: CheckoutComponent },
+            {
+                path: "store", component: StoreComponent,
+                canActivate: [StoreFirstGuard]
+            },
+            {
+                path: "cart", component: CartDetailComponent,
+                canActivate: [StoreFirstGuard]
+            },
+            {
+                path: "checkout", component: CheckoutComponent,
+                 canActivate: [StoreFirstGuard]
+            },
             { path: "**", redirectTo: "/store" }
         ])],
     declarations: [AppComponent],
-    providers: [/* TODO: Providers go here */],
+    providers: [StoreFirstGuard],
     bootstrap: [AppComponent],
 })
 export class AppModule { }
