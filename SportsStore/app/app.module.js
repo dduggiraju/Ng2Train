@@ -33,6 +33,11 @@ AppModule = __decorate([
                     path: "checkout", component: checkout_component_1.CheckoutComponent,
                     canActivate: [storeFirst_gaurd_1.StoreFirstGuard]
                 },
+                {
+                    path: "admin",
+                    loadChildren: "app/admin/admin.module#AdminModule",
+                    canActivate: [storeFirst_gaurd_1.StoreFirstGuard]
+                },
                 { path: "**", redirectTo: "/store" }
             ])],
         declarations: [app_component_1.AppComponent],
