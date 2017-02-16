@@ -13,13 +13,18 @@ const order_model_1 = require("./order.model");
 const order_repository_1 = require("./order.repository");
 const rest_datasource_1 = require("./rest.datasource");
 const http_1 = require("@angular/http");
+const auth_service_1 = require("./auth.service");
+// @NgModule({
+//     imports: [HttpModule],
+//     providers: [ProductRepository, StaticDataSource, Cart, Order, OrderRepository,
+//         { provide: StaticDataSource, useClass: RestDataSource }, RestDataSource, AuthService]
+// })
 let ModelModule = class ModelModule {
 };
 ModelModule = __decorate([
     core_1.NgModule({
         imports: [http_1.HttpModule],
-        providers: [product_repository_1.ProductRepository, static_datasource_1.StaticDataSource, cart_model_1.Cart, order_model_1.Order, order_repository_1.OrderRepository,
-            { provide: static_datasource_1.StaticDataSource, useClass: rest_datasource_1.RestDataSource }]
+        providers: [product_repository_1.ProductRepository, static_datasource_1.StaticDataSource, cart_model_1.Cart, order_model_1.Order, order_repository_1.OrderRepository, rest_datasource_1.RestDataSource, auth_service_1.AuthService]
     })
 ], ModelModule);
 exports.ModelModule = ModelModule;

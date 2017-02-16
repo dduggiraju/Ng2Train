@@ -9,25 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
-const router_1 = require("@angular/router");
-const auth_service_1 = require("../model/auth.service");
-let AdminComponent = class AdminComponent {
-    constructor(auth, router) {
-        this.auth = auth;
-        this.router = router;
+const rest_datasource_1 = require("./rest.datasource");
+require("rxjs/add/operator/map");
+let AuthService = class AuthService {
+    constructor(datasource) {
+        this.datasource = datasource;
     }
-    logout() {
-        this.auth.clear();
-        this.router.navigateByUrl("/");
+    authenticate(username, password) {
+        return this.datasource.authenticate(username, password);
+    }
+    get authenticated() {
+        return this.datasource.auth_token != null;
+    }
+    clear() {
+        this.datasource.auth_token = null;
     }
 };
-AdminComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: "admin.component.html"
-    }),
-    __metadata("design:paramtypes", [auth_service_1.AuthService,
-        router_1.Router])
-], AdminComponent);
-exports.AdminComponent = AdminComponent;
-//# sourceMappingURL=admin.component.js.map
+AuthService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [rest_datasource_1.RestDataSource])
+], AuthService);
+exports.AuthService = AuthService;
+//# sourceMappingURL=auth.service.js.map
