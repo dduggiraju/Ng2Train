@@ -8,14 +8,6 @@ import { RestDataSource } from './rest.datasource';
 import { HttpModule } from '@angular/http';
 import { AuthService } from './auth.service';
 
-
-
-// @NgModule({
-//     imports: [HttpModule],
-//     providers: [ProductRepository, StaticDataSource, Cart, Order, OrderRepository,
-//         { provide: StaticDataSource, useClass: RestDataSource }, RestDataSource, AuthService]
-// })
-
 @NgModule({
     imports: [HttpModule],
     providers: [ProductRepository, StaticDataSource, Cart, Order, OrderRepository, RestDataSource, AuthService]

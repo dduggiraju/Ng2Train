@@ -14,11 +14,6 @@ const order_repository_1 = require("./order.repository");
 const rest_datasource_1 = require("./rest.datasource");
 const http_1 = require("@angular/http");
 const auth_service_1 = require("./auth.service");
-// @NgModule({
-//     imports: [HttpModule],
-//     providers: [ProductRepository, StaticDataSource, Cart, Order, OrderRepository,
-//         { provide: StaticDataSource, useClass: RestDataSource }, RestDataSource, AuthService]
-// })
 let ModelModule = class ModelModule {
 };
 ModelModule = __decorate([

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
     templateUrl: 'store.component.html'
 })
 export class StoreComponent implements OnInit {
-    public selectedCategory = null;
+    public selectedCategory: string = null;
     public productsPerPage = 4;
     public selectedPage = 1;
     constructor(private repository: ProductRepository, private cart: Cart, private router: Router) { }

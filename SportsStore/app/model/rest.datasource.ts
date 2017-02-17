@@ -35,7 +35,7 @@ export class RestDataSource {
     saveOrder(order: Order): Observable<Order> {
         return this.sendRequest(RequestMethod.Post, "orders", order);
     }
-    updateProduct(product): Observable<Product> {
+    updateProduct(product: Product): Observable<Product> {
         return this.sendRequest(RequestMethod.Put,
             `products/${product.id}`, product, true);
     }
