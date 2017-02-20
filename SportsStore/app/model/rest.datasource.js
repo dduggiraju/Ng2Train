@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,9 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const http_1 = require("@angular/http");
-require("rxjs/add/operator/map");
+import { Injectable } from "@angular/core";
+import { Http, Request, RequestMethod } from "@angular/http";
+import "rxjs/add/operator/map";
 const PROTOCOL = "http";
 const PORT = 3500;
 let RestDataSource = class RestDataSource {
@@ -19,8 +18,8 @@ let RestDataSource = class RestDataSource {
         this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
     }
     authenticate(user, pass) {
-        return this.http.request(new http_1.Request({
-            method: http_1.RequestMethod.Post,
+        return this.http.request(new Request({
+            method: RequestMethod.Post,
             url: this.baseUrl + "login",
             body: { name: user, password: pass }
         })).map(response => {
@@ -30,31 +29,31 @@ let RestDataSource = class RestDataSource {
         });
     }
     getProducts() {
-        return this.sendRequest(http_1.RequestMethod.Get, "products");
+        return this.sendRequest(RequestMethod.Get, "products");
     }
     saveOrder(order) {
-        return this.sendRequest(http_1.RequestMethod.Post, "orders", order);
+        return this.sendRequest(RequestMethod.Post, "orders", order);
     }
     updateProduct(product) {
-        return this.sendRequest(http_1.RequestMethod.Put, `products/${product.id}`, product, true);
+        return this.sendRequest(RequestMethod.Put, `products/${product.id}`, product, true);
     }
     deleteProduct(id) {
-        return this.sendRequest(http_1.RequestMethod.Delete, `products/${id}`, null, true);
+        return this.sendRequest(RequestMethod.Delete, `products/${id}`, null, true);
     }
     getOrders() {
-        return this.sendRequest(http_1.RequestMethod.Get, "orders", null, true);
+        return this.sendRequest(RequestMethod.Get, "orders", null, true);
     }
     deleteOrder(id) {
-        return this.sendRequest(http_1.RequestMethod.Delete, `orders/${id}`, null, true);
+        return this.sendRequest(RequestMethod.Delete, `orders/${id}`, null, true);
     }
     updateOrder(order) {
-        return this.sendRequest(http_1.RequestMethod.Put, `orders/${order.id}`, order, true);
+        return this.sendRequest(RequestMethod.Put, `orders/${order.id}`, order, true);
     }
     saveProduct(product) {
-        return this.sendRequest(http_1.RequestMethod.Post, "products", product, true);
+        return this.sendRequest(RequestMethod.Post, "products", product, true);
     }
     sendRequest(verb, url, body, auth = false) {
-        let request = new http_1.Request({
+        let request = new Request({
             method: verb,
             url: this.baseUrl + url,
             body: body
@@ -66,8 +65,8 @@ let RestDataSource = class RestDataSource {
     }
 };
 RestDataSource = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
+    Injectable(),
+    __metadata("design:paramtypes", [Http])
 ], RestDataSource);
-exports.RestDataSource = RestDataSource;
+export { RestDataSource };
 //# sourceMappingURL=rest.datasource.js.map

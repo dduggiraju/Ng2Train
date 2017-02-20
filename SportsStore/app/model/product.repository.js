@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,9 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const rest_datasource_1 = require("./rest.datasource");
-//import { StaticDataSource } from './static.datasource';
+import { Injectable } from '@angular/core';
+import { RestDataSource } from "./rest.datasource";
 let ProductRepository = class ProductRepository {
     constructor(dataSource) {
         this.dataSource = dataSource;
@@ -52,8 +50,8 @@ let ProductRepository = class ProductRepository {
     }
 };
 ProductRepository = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [rest_datasource_1.RestDataSource])
+    Injectable(),
+    __metadata("design:paramtypes", [RestDataSource])
 ], ProductRepository);
-exports.ProductRepository = ProductRepository;
+export { ProductRepository };
 //# sourceMappingURL=product.repository.js.map

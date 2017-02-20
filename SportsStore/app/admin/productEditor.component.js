@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,16 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const router_1 = require("@angular/router");
-const product_model_1 = require("../model/product.model");
-const product_repository_1 = require("../model/product.repository");
+import { Component } from "@angular/core";
+import { Router, ActivatedRoute } from "@angular/router";
+import { Product } from "../model/product.model";
+import { ProductRepository } from "../model/product.repository";
 let ProductEditorComponent = class ProductEditorComponent {
     constructor(repository, router, activeRoute) {
         this.repository = repository;
         this.router = router;
         this.editing = false;
-        this.product = new product_model_1.Product();
+        this.product = new Product();
         this.editing = activeRoute.snapshot.params["mode"] == "edit";
         if (this.editing) {
             Object.assign(this.product, repository.getProduct(activeRoute.snapshot.params["id"]));
@@ -29,13 +28,13 @@ let ProductEditorComponent = class ProductEditorComponent {
     }
 };
 ProductEditorComponent = __decorate([
-    core_1.Component({
+    Component({
         moduleId: module.id,
         templateUrl: "productEditor.component.html"
     }),
-    __metadata("design:paramtypes", [product_repository_1.ProductRepository,
-        router_1.Router,
-        router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [ProductRepository,
+        Router,
+        ActivatedRoute])
 ], ProductEditorComponent);
-exports.ProductEditorComponent = ProductEditorComponent;
+export { ProductEditorComponent };
 //# sourceMappingURL=productEditor.component.js.map

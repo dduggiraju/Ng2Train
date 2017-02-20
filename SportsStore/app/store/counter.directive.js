@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
+import { Directive, ViewContainerRef, TemplateRef, Input } from '@angular/core';
 let CounterDirective = class CounterDirective {
     constructor(container, template) {
         this.container = container;
@@ -22,16 +21,16 @@ let CounterDirective = class CounterDirective {
     }
 };
 __decorate([
-    core_1.Input("counterOf"),
+    Input("counterOf"),
     __metadata("design:type", Number)
 ], CounterDirective.prototype, "counter", void 0);
 CounterDirective = __decorate([
-    core_1.Directive({
+    Directive({
         selector: "[counterOf]"
     }),
-    __metadata("design:paramtypes", [core_1.ViewContainerRef, core_1.TemplateRef])
+    __metadata("design:paramtypes", [ViewContainerRef, TemplateRef])
 ], CounterDirective);
-exports.CounterDirective = CounterDirective;
+export { CounterDirective };
 class CounterDirectiveContext {
     constructor($implicit) {
         this.$implicit = $implicit;

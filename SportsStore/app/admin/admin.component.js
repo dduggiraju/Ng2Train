@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,9 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const router_1 = require("@angular/router");
-const auth_service_1 = require("../model/auth.service");
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthService } from "../model/auth.service";
 let AdminComponent = class AdminComponent {
     constructor(auth, router) {
         this.auth = auth;
@@ -22,12 +21,12 @@ let AdminComponent = class AdminComponent {
     }
 };
 AdminComponent = __decorate([
-    core_1.Component({
+    Component({
         moduleId: module.id,
         templateUrl: "admin.component.html"
     }),
-    __metadata("design:paramtypes", [auth_service_1.AuthService,
-        router_1.Router])
+    __metadata("design:paramtypes", [AuthService,
+        Router])
 ], AdminComponent);
-exports.AdminComponent = AdminComponent;
+export { AdminComponent };
 //# sourceMappingURL=admin.component.js.map

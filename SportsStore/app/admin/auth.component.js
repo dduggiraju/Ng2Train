@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,9 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const router_1 = require("@angular/router");
-const auth_service_1 = require("../model/auth.service");
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthService } from "../model/auth.service";
 let AuthComponent = class AuthComponent {
     constructor(router, auth) {
         this.router = router;
@@ -32,11 +31,11 @@ let AuthComponent = class AuthComponent {
     }
 };
 AuthComponent = __decorate([
-    core_1.Component({
+    Component({
         moduleId: module.id,
         templateUrl: "auth.component.html"
     }),
-    __metadata("design:paramtypes", [router_1.Router, auth_service_1.AuthService])
+    __metadata("design:paramtypes", [Router, AuthService])
 ], AuthComponent);
-exports.AuthComponent = AuthComponent;
+export { AuthComponent };
 //# sourceMappingURL=auth.component.js.map

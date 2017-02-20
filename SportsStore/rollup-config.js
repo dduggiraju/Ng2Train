@@ -2,7 +2,7 @@ import rollup from "rollup";
 import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import uglify from "rollup-plugin-uglify";
-import alias from 'rollup-plugin-alias';
+import alias from 'rollup-plugin-strict-alias';
 export default {
     entry: "app/main.js",
     dest: "sportsstore.min.js",

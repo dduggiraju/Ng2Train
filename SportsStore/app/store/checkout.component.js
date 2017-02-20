@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,9 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const order_repository_1 = require("../model/order.repository");
-const order_model_1 = require("../model/order.model");
+import { Component } from "@angular/core";
+import { OrderRepository } from '../model/order.repository';
+import { Order } from '../model/order.model';
 let CheckoutComponent = class CheckoutComponent {
     constructor(repository, order) {
         this.repository = repository;
@@ -30,12 +29,12 @@ let CheckoutComponent = class CheckoutComponent {
     }
 };
 CheckoutComponent = __decorate([
-    core_1.Component({
+    Component({
         moduleId: module.id,
         templateUrl: "checkout.component.html",
         styleUrls: ["checkout.component.css"]
     }),
-    __metadata("design:paramtypes", [order_repository_1.OrderRepository, order_model_1.Order])
+    __metadata("design:paramtypes", [OrderRepository, Order])
 ], CheckoutComponent);
-exports.CheckoutComponent = CheckoutComponent;
+export { CheckoutComponent };
 //# sourceMappingURL=checkout.component.js.map

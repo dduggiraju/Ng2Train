@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,9 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const router_1 = require("@angular/router");
-const store_component_1 = require("./store/store.component");
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+import { StoreComponent } from "./store/store.component";
 let StoreFirstGuard = class StoreFirstGuard {
     constructor(router) {
         this.router = router;
@@ -19,7 +18,7 @@ let StoreFirstGuard = class StoreFirstGuard {
     canActivate(route, state) {
         if (this.firstNavigation) {
             this.firstNavigation = false;
-            if (route.component != store_component_1.StoreComponent) {
+            if (route.component != StoreComponent) {
                 this.router.navigateByUrl("/");
                 return false;
             }
@@ -28,8 +27,8 @@ let StoreFirstGuard = class StoreFirstGuard {
     }
 };
 StoreFirstGuard = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [router_1.Router])
+    Injectable(),
+    __metadata("design:paramtypes", [Router])
 ], StoreFirstGuard);
-exports.StoreFirstGuard = StoreFirstGuard;
+export { StoreFirstGuard };
 //# sourceMappingURL=storeFirst.gaurd.js.map

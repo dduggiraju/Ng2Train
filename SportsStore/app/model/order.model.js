@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const cart_model_1 = require("./cart.model");
+import { Injectable } from "@angular/core";
+import { Cart } from "./cart.model";
 let Order = class Order {
     constructor(cart) {
         this.cart = cart;
@@ -24,8 +23,8 @@ let Order = class Order {
     }
 };
 Order = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [cart_model_1.Cart])
+    Injectable(),
+    __metadata("design:paramtypes", [Cart])
 ], Order);
-exports.Order = Order;
+export { Order };
 //# sourceMappingURL=order.model.js.map

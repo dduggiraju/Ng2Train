@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const order_repository_1 = require("../model/order.repository");
+import { Component } from "@angular/core";
+import { OrderRepository } from "../model/order.repository";
 let OrderTableComponent = class OrderTableComponent {
     constructor(repository) {
         this.repository = repository;
@@ -28,11 +27,11 @@ let OrderTableComponent = class OrderTableComponent {
     }
 };
 OrderTableComponent = __decorate([
-    core_1.Component({
+    Component({
         moduleId: module.id,
         templateUrl: "orderTable.component.html"
     }),
-    __metadata("design:paramtypes", [order_repository_1.OrderRepository])
+    __metadata("design:paramtypes", [OrderRepository])
 ], OrderTableComponent);
-exports.OrderTableComponent = OrderTableComponent;
+export { OrderTableComponent };
 //# sourceMappingURL=orderTable.component.js.map

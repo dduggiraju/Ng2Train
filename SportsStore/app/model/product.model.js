@@ -1,5 +1,4 @@
-"use strict";
-class Product {
+export class Product {
     constructor(id, name, category, description, price) {
         this.id = id;
         this.name = name;
@@ -8,5 +7,4 @@ class Product {
         this.price = price;
     }
 }
-exports.Product = Product;
 //# sourceMappingURL=product.model.js.map

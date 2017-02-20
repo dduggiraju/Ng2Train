@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,9 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const rest_datasource_1 = require("./rest.datasource");
-require("rxjs/add/operator/map");
+import { Injectable } from "@angular/core";
+import { RestDataSource } from "./rest.datasource";
+import "rxjs/add/operator/map";
 let AuthService = class AuthService {
     constructor(datasource) {
         this.datasource = datasource;
@@ -26,8 +25,8 @@ let AuthService = class AuthService {
     }
 };
 AuthService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [rest_datasource_1.RestDataSource])
+    Injectable(),
+    __metadata("design:paramtypes", [RestDataSource])
 ], AuthService);
-exports.AuthService = AuthService;
+export { AuthService };
 //# sourceMappingURL=auth.service.js.map
